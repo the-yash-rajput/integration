@@ -19,14 +19,18 @@
 #btn
 {
     margin-top: 20px;
+    height:35px;
+    width:90px;
 }
-
+#btn2
+{
+    margin-top: 20px;
+    height:35px;
+    width:90px;
+}
 #lower
 {
     display: none;
-}
-
-#lower{
     justify-content: center;
     align-items: center;
     flex-direction: column;

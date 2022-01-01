@@ -1,8 +1,8 @@
 
 const butn = document.querySelector('#btn');
+const butn2 = document.querySelector('#btn2'); 
 butn.addEventListener('click', function (){
     const data = document.getElementById('input').value;
-    // console.log(data);
     try
     {
         const json = JSON.parse(data);
@@ -18,13 +18,14 @@ butn.addEventListener('click', function (){
             const status = response.status;
             if (status == 400)
             {
-                alert("Entered Data Has Less Than 2 Parameters");
+                alert("Entered Data Has Less Than 2 Parameters Please Enter Valid Format");
             }
             else if(status == 201)
             {
                 document.getElementById('upper').style.display = 'none';
                 document.getElementById('lower').style.display = 'flex';
                 const myform = document.querySelector("#form");
+
 
                 for (let val in json)
                 {
@@ -47,4 +48,14 @@ butn.addEventListener('click', function (){
     {
         alert("Entered Data is Not Valid JSON.");
     }
+});
+
+
+butn2.addEventListener('click', function () {
+    var list = document.getElementById("form");
+    while (list.hasChildNodes()) {  
+        list.removeChild(list.firstChild);
+    }
+    document.getElementById('lower').style.display = 'none';
+    document.getElementById('upper').style.display = 'flex';
 });
